@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(160deg, #d0eaff, #f9f9ff); /* soft pastel gradient */
+  color: #123;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  margin-bottom: 2.5%;
+  background: linear-gradient(160deg, #f9fafc, #e0f7ff); 
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+header h1 {
+  font-size: 54px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800; 
+  background: linear-gradient(135deg, #98bbe1, #d49cdd); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+}
+
+header p.name {
+  font-size: 22px;
+  margin: 12px 0 0 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #1b263b; 
+  letter-spacing: 0.5px;
+}
+
+header p.description {
+  font-size: 18px;
+  margin: 8px 0 0 0;
+  color: #415a77; 
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 50px 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: -25px 0 40px 0;
+  z-index: 10;
+  position: relative;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #98bbe1, #d49cdd);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #7eb1e7, #d482de);
+}
+
+.navbar .nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Exercises/Projects */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  padding: 30px 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(16, 85, 122, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(16, 85, 122, 0.15);
+}
+
+/* Section titles inside cards */
+.section-title h2 {
+  font-size: 26px;
+  color: #022f55;
+  margin-bottom: 16px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #044f88;
+  background: linear-gradient(180deg, #e3f4ff, #ffffff);
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  background: linear-gradient(135deg, #b0e0ff, #80cfff);
+  color: #022f55;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.links a .link-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project_section h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, #98bbe1, #d49cdd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.project_section h3:hover {
+  transform: translateY(-2px);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+}
+
+
+/*Footer */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #6b7c93;
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 42px; }
+  header p.name { font-size: 20px; }
+  .card { padding: 25px 30px; }
+  .navbar ul li a { font-size: 16px; padding: 12px 18px; }
+  .links a { font-size: 16px; padding: 12px 18px; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 34px; }
+  header p.name { font-size: 18px; }
+  .card { padding: 20px 25px; }
+  .navbar ul { gap: 12px; }
+  .navbar ul li a { font-size: 14px; padding: 10px 15px; }
+  .links a { font-size: 15px; padding: 10px 14px; }
+}
