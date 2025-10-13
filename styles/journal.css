@@ -89,6 +89,7 @@ header p.lead {
   margin-bottom: 30px;
   box-shadow: 0 10px 25px rgba(16, 85, 122, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 350px;
 }
 
 .card:hover {
