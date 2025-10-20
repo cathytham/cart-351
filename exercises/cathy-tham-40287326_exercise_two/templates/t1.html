@@ -1,0 +1,77 @@
+<!--2. Create the specified HTML template - and make sure it inherits from base.html.-->
+{% extends "base.html" %}
+
+<!--#4. In the html template - make your own *creation*: use all the passed variables, include some of the images from the supplied images folder, (you must use the url_for()) use at least one for loop Jinja style and one if statement Jinja style ... LAYOUT and STYLE is important.-->
+
+{% block content %}
+
+    <!--Link css sheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/t1.css') }}">
+
+  <section>
+    <div class="donut-header">
+      <h2>{{the_topic|title}}</h2>
+    </div>
+
+    <p>There is <strong>{{ number_of_donuts }}</strong> donuts in total.</p>
+
+    <!-- show how many flavours and toppings using the |length filter -->
+    <p class="donut-details">There is <strong>{{ donut_data.flavours|length }}</strong> different flavours and <strong>{{ donut_data.toppings|length }}</strong> different toppings to choose from.</p>
+
+  <!--Print all flavors-->
+  <h3 class="section-title">Flavours</h3>
+    <ul>
+      <!-- Jinja for-loop: loop over each flavour in the flavours list #}-->
+      {% for f in donut_data.flavours %}
+        <li>
+          {{ f }}
+          <!--Jinja if-statement: checks whether the current flavour contains 'Chocolate' #}-->
+          {% if 'Chocolate' in f %}
+            - <strong>Popular choice!</strong>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="section-title">Toppings</h3>
+    <ul>
+      <!-- Jinja for-loop: list each topping from the toppings list -->
+      {% for f in donut_data.toppings %}
+        <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="section-title">Ice cream pairings</h3>
+    <ul>
+      <!-- Jinja for-loop: iterate icecream_flavors and display each one #} -->
+      {% for f in icecream_flavors %}
+        <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Add Images gallery -->
+    <div class="gallery">
+      <h3 class="section-title">Images</h3>
+      <ul class="gallery-list">
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_a.png') }}" alt="donut a">
+        </li>
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_b.png') }}" alt="donut b">
+        </li>
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_c.png') }}" alt="donut c">
+        </li>
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_d.png') }}" alt="donut d">
+        </li>
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_e.png') }}" alt="donut e">
+        </li>
+        <li class="gallery-item">
+          <img src="{{ url_for('static', filename='images/donut_f.png') }}" alt="donut f">
+        </li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}

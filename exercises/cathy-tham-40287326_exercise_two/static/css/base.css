@@ -1,0 +1,84 @@
+*{
+    margin:0;
+     padding:0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   
+}
+h2{
+
+    font-size:32px;
+    padding:5px;
+    background-color:rgb(167, 69, 112);
+    color: rgb(255,255,255);
+}
+nav{
+    padding-bottom:5px;
+    background-color:rgb(167, 69, 112);
+}
+nav ul{
+    display:flex;
+    justify-content:right;
+  
+}
+nav ul li{
+    width:10%;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style-type: none;
+
+      
+}
+nav li a{
+text-decoration: none;
+color:rgb(255, 255, 255);
+}
+
+main{
+    margin: 10px;
+     background-color: rgb(229, 243, 245);
+     min-height:calc(75vh);
+}
+
+footer{
+     background-color:rgb(167, 69, 112);
+       min-height:5vh;
+       padding:5px;
+       color: rgb(255,255,255);
+
+}
+
+
+/* form styles for t2 */
+.form-section{max-width:900px;margin:20px auto;padding:12px}
+.form-div{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.form-div h2{margin-bottom:6px}
+.form-div .lead{color:#666;margin-bottom:12px}
+.donut-form .form-group{margin-bottom:12px}
+.donut-form label{display:block;font-weight:600;margin-bottom:6px}
+.donut-form input[type=text],.donut-form input[type=email],.donut-form textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px}
+.form-actions{text-align:right}
+.btn-submit{background:#a74570;color:#fff;padding:10px 16px;border-radius:8px;border:none;cursor:pointer}
+.btn-submit:hover{opacity:0.95}
+
+.masked-output{background:#f4f4f8;padding:10px;border-radius:6px;border:1px dashed #ccc;margin-top:12px;font-family:monospace}
+
+/* Creative masked output */
+.masked-output{display:flex;flex-wrap:wrap;gap:6px;padding:12px}
+.masked-char{display:inline-flex;align-items:center;justify-content:center;width:28px;height:34px;background:#222;color:#fff;border-radius:4px;font-weight:700}
+.masked-words{margin-top:12px}
+.masked-word{display:inline-block;background:#e8f0ff;color:#0b3a66;padding:6px 10px;border-radius:999px;margin:4px;font-weight:600}
+
+/* Animations */
+.masked-char{opacity:0;transform:translateY(8px) scale(0.95);animation:popIn 360ms cubic-bezier(.2,.8,.2,1) var(--delay,0s) forwards}
+.masked-word{opacity:0;transform:translateY(6px);animation:fadeInUp 420ms ease var(--delay,0s) forwards}
+
+@keyframes popIn{
+    to{opacity:1;transform:none}
+}
+
+@keyframes fadeInUp{
+    to{opacity:1;transform:none}
+}

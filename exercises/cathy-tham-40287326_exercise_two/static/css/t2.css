@@ -1,0 +1,46 @@
+.form-section{
+    max-width:900px;margin:20px auto;padding:12px
+}
+.form-div{
+    background:#fff;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04)
+}
+
+.form-div h2{
+    margin-bottom:6px
+}
+.form-div .lead{
+    color:#666;
+    margin-bottom:12px
+}
+.donut-form .form-group{
+    margin-bottom:12px
+}
+.donut-form label{
+    display:block;font-weight:600;margin-bottom:6px
+}
+input,textarea{
+    box-sizing: border-box;
+    width:100%;
+    padding:8px;
+    border-radius:6px;
+}
+
+.form-submit{
+    text-align:right
+}
+
+.btn-submit{
+    background:#a74570;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer
+}
+
+.btn-submit:hover{
+    opacity:0.85
+}

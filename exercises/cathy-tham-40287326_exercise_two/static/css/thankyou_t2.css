@@ -1,0 +1,23 @@
+/* Container that holds the masked characters */
+.masked-output{
+  background: #f9f9fb;
+  padding: 12px;       
+  border-radius: 6px;  
+  border: 1px solid #ddd;
+  font-family: monospace;
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 6px;            
+}
+
+/* Each character in small square */
+.masked-char{
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 34px;
+  background: #503737;   
+  color: #fff;       
+  border-radius: 4px;
+  font-weight: 700;
+}

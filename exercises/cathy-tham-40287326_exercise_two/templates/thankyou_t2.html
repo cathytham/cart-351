@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!--Link css sheet-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/thankyou_t2.css') }}">
+  
+  <section class="form-page">
+    <div class="form-div">
+      <h2>Thank you for your order!</h2>
+      <div class="masked-output">
+        {% for c in combined_masked %}
+          <span class="masked-char" style="--delay: {{ (loop.index0 * 0.03)|round(2) }}s">{{ c }}</span>
+        {% endfor %}
+      </div>
+  </section>
+{% endblock %}

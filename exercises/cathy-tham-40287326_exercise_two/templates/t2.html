@@ -1,0 +1,37 @@
+<!--2. Create the specified HTML template - and make sure it inherits from base.html.-->
+{% extends "base.html" %}
+
+<!--3.Add an HTML form into this template with two text fields, one textarea component, labels, and a submit button. Again, LAYOUT and STYLE is important.-->
+{% block content %}
+<!--Link css sheet-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/t2.css') }}">
+
+  <section class="form-section">
+    <div class="form-div">
+      <h2>Order Here</h2>
+      <p class="lead">Please fill out the form to order and click Submit.</p>
+    
+      <!--4. Using the GET method pass the inputted data from the HTML form to the specified function via the '/thank_you_t2'route *** (remember to also set the action attribute in the form)-->
+      <form action="{{ url_for('thank_you_t2') }}" method="get" class="donut-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="donut">Choose Your Donuts Flavor</label>
+          <input type="text" id="donut" name="donut" placeholder="e.g. Chocolate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="5" placeholder="Add your Toppings. Any comments or allergies"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}
