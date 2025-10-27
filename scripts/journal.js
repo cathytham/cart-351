@@ -1,4 +1,4 @@
-const weeks = ["week2", "week3", "week4", "week5", "week6", "week7"];
+const weeks = ["week2", "week3", "week4", "week5", "week6", "week7",];
 let currentWeek = 0;
 
 const nextBtn = document.getElementById("nextBtn");
