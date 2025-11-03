@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Use the t2 stylesheet -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/t2.css') }}">
+
+<section class="t2-section">
+    <h1>Pick Your Favorite Donut</h1>
+    <p class="subtitle">Choose your favorite donut, write a message, and save it!</p>
+
+    <!-- Donut images -->
+    <div class="donut-gallery" id="donutGallery">
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_a.png') }}" alt="Donut Dark Chocolate" data-donut="Donut Chocolate" class="donut">
+            <p class="donut-name">Chocolate</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_b.png') }}" alt="Donut Chocolate Fudge" data-donut="Donut Chocolate Fudge" class="donut">
+            <p class="donut-name">Chocolate Fudge</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_c.png') }}" alt="Donut Pumpkin" data-donut="Donut Pumpkin" class="donut">
+            <p class="donut-name">Pumpkin</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_d.png') }}" alt="Donut Dulce de Leche" data-donut="Donut Dulce de Leche" class="donut">
+            <p class="donut-name">Dulce de Leche</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_e.png') }}" alt="Donut Blueberry" data-donut="Donut Blueberry" class="donut">
+            <p class="donut-name">Blueberry</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_f.png') }}" alt="Donut Bubble Gum" data-donut="Donut Bubble Gum" class="donut">
+            <p class="donut-name">Bubble Gum</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_pink.png') }}" alt="Donut Strawberry" data-donut="Donut Strawberry" class="donut">
+            <p class="donut-name">Strawberry</p>
+        </div>
+        <div class="donut-item">
+            <img src="{{ url_for('static', filename='images/donut_sprinkles.png') }}" alt="Donut Chocolate Sprinkles" data-donut="Donut Chocolate Sprinkles" class="donut">
+            <p class="donut-name">Chocolate Sprinkles</p>
+        </div>
+    </div>
+
+
+    <!-- Input section -->
+    <div class="form-div">
+        <div class="selected-info">
+        <span id="selectedLabel">No donut selected</span>
+        </div>
+
+        <!-- Text area for message input -->
+        <textarea id="msgInput" placeholder="Write a short message..." rows="4"></textarea>
+
+        <!-- Buttons -->
+        <div class="actions">
+        <button id="saveBtn" class="btn" disabled>Save Message</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <!-- Status display -->
+        <div id="status" class="status"></div>
+    </div>
+
+    <!-- Notes display -->
+    <section class="notes-wall">
+        <h3>Messages Wall</h3>
+        <ul id="notesList"></ul>
+    </section>
+</section>
+
+<!-- Load external JS -->
+<script src="{{ url_for('static', filename='js/t2_script.js') }}"></script>
+{% endblock %}
