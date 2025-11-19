@@ -72,12 +72,14 @@ def event_view(event_id):
     avails = read_json(AVAIL_FILE, {}).get(event_id, [])
     return render_template("event_view.html", event=event, responses=avails)
 
+# Route to save availability entry
 @app.route("/api/event/<event_id>/save", methods=["POST"])
 def save_availability(event_id):
     payload = request.get_json()
     name = payload["name"]
     slots = payload["slots"]
 
+    # read existing data if available from availabilities.json file
     all_data = read_json(AVAIL_FILE, {})
     if event_id not in all_data:
         all_data[event_id] = []
@@ -91,6 +93,7 @@ def save_availability(event_id):
     if not found:
         all_data[event_id].append({"name": name, "slots": slots})
 
+    # Write back to availabilities.json file
     write_json(AVAIL_FILE, all_data)
     return jsonify({"status":"saved"})
 
@@ -109,6 +112,7 @@ def delete_availability(event_id):
     return jsonify({"status": "deleted"})
 
 
+# Route to get summary of availabilities 
 @app.route("/api/event/<event_id>/summary")
 def summary(event_id):
     all_data = read_json(AVAIL_FILE, {})
