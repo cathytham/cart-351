@@ -474,7 +474,6 @@ window.onload = function () {
     let maxWidth = 900; // wrap to next row when past this
 
     // create color for each event name
-    // simple list of colors to use
     let colorList = [
       "#fa929dff", "#fbbb73ff", "#FFFFBA", "#90f7a6ff", "#4598d8ff",
       "#B5B2FF", "#FFB2F5", "#ca4e7dff", "#CDB4DB", "#A2D2FF",
@@ -489,7 +488,7 @@ window.onload = function () {
       eventColors[eventName] = colorList[i % colorList.length]; 
     }
 
-    // this array will store info needed for the wave animation
+    // this array is used to store info needed for the wave animation
     let dots = [];
 
     // loop through each database entry
@@ -516,7 +515,7 @@ window.onload = function () {
       dp.update(x, y);
       dataPoints.push(dp);
 
-      // save its base position so animation can update it later
+      // save base position so the animation can be updated later
       dots.push({
         dp: dp,
         baseX: x,
@@ -531,7 +530,7 @@ window.onload = function () {
       // move right
       x += spacingX;
 
-      // if too wide, start new row
+      // adjust width to start new row
       if (x > maxWidth) {
         x = 20;
         y += spacingY;
@@ -547,7 +546,7 @@ window.onload = function () {
     function animateWave() {
       t += 0.02;
 
-      // update every dot's Y position based on a sine wave
+      // update every dot's Y position based on wave
       for (let i = 0; i < dots.length; i++) {
         let info = dots[i];
         let newY = info.baseY + Math.sin(t + info.offset) * 8;
@@ -624,7 +623,7 @@ window.onload = function () {
         "point_two"
       );
 
-      // starting x position (random)
+      // starting x position, random
       let x = Math.random() * 600;
       dp.update(x, laneY);
 

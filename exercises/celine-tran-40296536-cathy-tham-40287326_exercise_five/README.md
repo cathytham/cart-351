@@ -89,7 +89,7 @@ Design Choices:
 - Colors based on mood – helps visualize each mood
 - Top lane = Monday
 - Bottom lane = Tuesday
-- •	Data points behave like “cars” 
+- Data points behave like “cars” 
 - Speed is based on event_affect_strength - stronger emotional impact = faster car
 
 ### Query 6 — Negative Mood Filter
