@@ -1,4 +1,4 @@
-## Explanation of MongoDB Query and Visualizations
+## Explanation of MongoDB Queries and Visualizations
 
 ### Project Overview
 This project loads data from a MongoDB collection and allows the user to view the results using  a dropdown menu.
@@ -12,25 +12,25 @@ def three():
     results = mongo.db.dataStuff.find({"after_mood": {"$in": positive_moods}})
     return {"results": results, "positive_moods": positive_moods}
 ```
-- `"after_mood": {"$in": positive_moods}`
+#### ```"after_mood": {"$in": positive_moods}```
 This query returns all entries where the after_mood of the participant is positiv; happy, neutral, calm, serene and well.
 The query checks if after_mood IN [happy, neutral, calm, serene, well]. Therefore, the result contains only the dataset items where people ended their day in a positive mood.
 
-- `return {"results": results, "positive_moods": positive_moods}
-- Sends the results filtered by positive moods to the webpage.
+#### ```return {"results": results, "positive_moods": positive_moods}```
+Sends the results filtered by positive moods to the webpage.
 
 ### Screenshot Query 3
 ![Query 3 Screenshot](./screenshots/query3.png)
 
-Inspiration:
+#### Inspiration:
 Positive moods feel light, happy, calm and uplifting.
 To represent this, I made each data point behave like a bubble floating upward.
 
-Design Choices:
+#### Design Choices:
 - Color = event_name
 - Soft colors → represent calmness and happiness
--Bubbles → summer, joy and light 
--Upward movement animation → symbolizing positivity = lifting up “mood”
+- Bubbles → summer, joy and light 
+- Upward movement animation → symbolizing positivity = lifting up “mood”
 
 
 ### Query 4 — Sort by Event Name
@@ -40,21 +40,21 @@ def four():
     results = mongo.db.dataStuff.find().sort("event_name", 1)
     return {"results": results, "events": event_names}
 ```
--`.sort("event_name", 1)`
-- This query sorts all the entries alphabetically by the event_name field. Therefore, if the database has events such as; walking in a forest, swimming in the ocean, dining with sibling, taking a nap with a cat, it will be returned in alphabetically order.
+#### ```.sort("event_name", 1)```
+This query sorts all the entries alphabetically by the event_name field. Therefore, if the database has events such as; walking in a forest, swimming in the ocean, dining with sibling, taking a nap with a cat, it will be returned in alphabetically order.
 
-- ` return {"results": results, "events": event_names}`
-- Sends the sorted results to the webpage.
+#### ```return {"results": results, "events": event_names}```
+Sends the sorted results to the webpage.
 
 
 ### Screenshot Query 4
 ![Query 4Screenshot](./screenshots/query4.png)
 
-Inspiration:
+#### Inspiration:
 - Since this query sorts events alphabetically, I chose a clean grid layout.
 - To make it more unique and fun, I added a wave animation.
 
-Design Choices:
+#### Design Choices:
 - Grid layout → represents sorting and organization
 - Different event colors → helps visualize each category
 - Wave animation → adds liveliness 
@@ -70,22 +70,22 @@ def five():
 
     return {"results": results, "days": ["Monday", "Tuesday"]}
 ```
-- `"day": {"$in": ["Monday", "Tuesday"]}`
-- This query extracts only the entries where day is “Monday” or “Tuesday”. 
+#### ```day": {"$in": ["Monday", "Tuesday"]}```
+This query extracts only the entries where day is “Monday” or “Tuesday”. 
 
-- `.sort("event_affect_strength", 1)`
-- The results are sorted by their event_affect_strength.
+#### ```.sort("event_affect_strength", 1)```
+The results are sorted by their event_affect_strength.
 
-- ` return {"results": results, "days": ["Monday", "Tuesday"`
-- Sends the filtered and sorted results to the webpage.
+#### ```return {"results": results, "days": ["Monday", "Tuesday"} ```
+Sends the filtered and sorted results to the webpage.
 
 ### Screenshot Query 5
 ![Query 5 Screenshot](./screenshots/query5.png)
 
-Inspiration:
+#### Inspiration:
 Since Monday and Tuesday are two separate days, I showed them as two lanes, each points are following each other like cars, representing traffic on working days.
 
-Design Choices:
+#### Design Choices:
 - Colors based on mood – helps visualize each mood
 - Top lane = Monday
 - Bottom lane = Tuesday
@@ -105,24 +105,22 @@ def six():
 
     return {"results": results, "negatives": negative_moods}
 ```
-- `"start_mood": {"$in": negative_moods}`
+#### ```"start_mood": {"$in": negative_moods}``` & ```"after_mood": {"$in": negative_moods}```
+Both returns entries where both of the following: start_mood and after_mood is negative which are sad, angry, neutral, calm, anxious, moody and hurt.
 
-- `"after_mood": {"$in": negative_moods}`
-- Both returns entries where both of the following: start_mood and after_mood is negative which are sad, angry, neutral, calm, anxious, moody and hurt.
+#### ```.sort("weather", 1)```
+Sorts all results by weather type in alphabetical order.
 
-- `.sort("weather", 1)`
-- Sorts all results by weather type in alphabetical order.
-
-- `return {"results": results, "negatives": negative_moods}`
-- Sends the filtered results to the webpage.
+#### ```return {"results": results, "negatives": negative_moods}```
+Sends the filtered results to the webpage.
 
 ### Screenshot Query 6
 ![Query 6 Screenshot](./screenshots/query6.png)
 
-Inspiration:
+#### Inspiration:
 Negative feeling feels unstable, tense, or stressful. The lightning theme represents the emotional stresses on our body.
 
-Design Choices:
+#### Design Choices:
 - Deep colors represent sad/angry moods
 - Dark background – stormy atmosphere
 - Thin shapes points make it looks like lighting when jittering 
