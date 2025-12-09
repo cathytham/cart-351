@@ -1,10 +1,22 @@
 body {
+  background-image: url("../images/starBackground.gif");
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background: linear-gradient(160deg, #d0eaff, #f9f9ff); /* soft pastel gradient */
   color: #123;
   line-height: 1.6;
+  cursor: url(../images/cursor1.png), auto;
+  animation: cursor 0.3s linear infinite;
+}
+
+@keyframes cursor {
+  0% {
+    cursor: url('../images/cursor1.png'), auto;
+  }
+
+  100% {
+    cursor: url('../images/cursor2.png'), auto;
+  }
 }
 
 /* Header */
@@ -101,7 +113,7 @@ header p.description {
 
 /* Exercises/Projects */
 .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.64);
   border-radius: 22px;
   padding: 30px 35px;
   margin-bottom: 30px;
@@ -138,7 +150,7 @@ header p.description {
 }
 
 .links a:hover {
-  background: linear-gradient(135deg, #b0e0ff, #80cfff);
+  background: linear-gradient(135deg, #b0dfffd1, #80ceffbe);
   color: #022f55;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -196,3 +208,6 @@ header p.description {
   .navbar ul li a { font-size: 14px; padding: 10px 15px; }
   .links a { font-size: 15px; padding: 10px 14px; }
 }
+
+
+/* cursor animation removed — use static image cursor for compatibility */
