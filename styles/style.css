@@ -9,6 +9,13 @@ body {
   animation: cursor 0.3s linear infinite;
 }
 
+/* Make page a column so footer can stick to bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @keyframes cursor {
   0% {
     cursor: url('../images/cursor1.png'), auto;
@@ -63,6 +70,9 @@ header p.description {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* allow wrap to grow so footer can be pushed down */
 }
 
 /* Navbar */
@@ -190,6 +200,7 @@ header p.description {
   margin-top: 50px;
   font-size: 16px;
   color: #6b7c93;
+  margin-top: auto; /* push footer to bottom of the page when content is short */
 }
 
 @media (max-width: 768px) {
